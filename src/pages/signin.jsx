@@ -3,7 +3,7 @@ import { signIn } from "next-auth/react";
 import { useAccount, useConnect, useSignMessage, useDisconnect } from "wagmi";
 import { useRouter } from "next/router";
 import { useAuthRequestChallengeEvm } from "@moralisweb3/next";
-
+const {log} = console
 function SignIn() {
     const { connectAsync } = useConnect();
     const { disconnectAsync } = useDisconnect();
@@ -26,7 +26,7 @@ function SignIn() {
             chainId: chain.id,
         });
 
-        const signature = await signMessageAsync({ message });
+        const signature = await signMessageAsync({ message })
 
         // redirect user after success authentication to '/user' page
         const { url } = await signIn("moralis-auth", {
@@ -35,12 +35,9 @@ function SignIn() {
             redirect: false,
             callbackUrl: "/user",
         });
-        /**
-         * instead of using signIn(..., redirect: "/user")
-         * we get the url from callback and push it to the router to avoid page refreshing
-         */
-        push(url);
-    };
+
+        return push(url);
+    }
 
     return (
         <div>
