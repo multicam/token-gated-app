@@ -8,7 +8,7 @@ const ProtectedPage = ({user}) => {
         <div>
             <button onClick={() => push('/user')}>Profile</button>
             <h3>Protected Content</h3>
-            <pre className='whitespace-pre-wrap'>{address}</pre>
+            <pre>connected to wallet {address}</pre>
         </div>
     );
 }
