@@ -1,6 +1,7 @@
 import {useRouter} from "next/router";
 import {getSession} from "next-auth/react";
 const {log} = console, {keys} = Object
+
 const ProtectedPage = ({user}) => {
     const {push} = useRouter();
     const address = user?.address
