@@ -9,10 +9,14 @@ export default NextAuth({
             if (user) {
                 token.user = user;
             }
+            // console.log('init',{token})
             return token;
         },
         async session({ session, token }) {
             session.user = token.user;
+            // console.log({token});
+            // console.log({session});
+            console.log('-- auth session',!!session?.user)
             return session;
         },
     },

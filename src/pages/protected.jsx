@@ -1,5 +1,7 @@
 import {useRouter} from "next/router";
 import {getSession} from "next-auth/react";
+import {NFTCollection, TokenBalances} from "@/components";
+
 const {log} = console, {keys} = Object
 
 const ProtectedPage = ({user}) => {
@@ -10,6 +12,8 @@ const ProtectedPage = ({user}) => {
             <button onClick={() => push('/user')}>Profile</button>
             <h3>Protected Content</h3>
             <pre>connected to wallet {address}</pre>
+            <NFTCollection address={address}/>
+            <TokenBalances address={address}/>
         </div>
     );
 }

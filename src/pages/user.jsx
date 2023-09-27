@@ -1,5 +1,6 @@
 import { getSession, signOut } from "next-auth/react";
 import { useRouter } from "next/router";
+
 // gets a prop from getServerSideProps
 function User({ user }) {
     const { push } = useRouter();
