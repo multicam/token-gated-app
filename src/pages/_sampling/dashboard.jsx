@@ -1,4 +1,3 @@
-import { Metadata } from "next"
 import Image from "next/image"
 
 import { Button } from "@/registry/new-york/ui/button"
@@ -17,12 +16,12 @@ import {
     TabsTrigger,
 } from "@/registry/new-york/ui/tabs"
 
+import TeamSwitcher from "@/components/team-switcher"
 import { CalendarDateRangePicker } from "@/components/date-range-picker"
 import { MainNav } from "@/components/main-nav"
 import { Overview } from "@/components/overview"
 import { RecentSales } from "@/components/recent-sales"
 import { Search } from "@/components/search"
-import TeamSwitcher from "@/components/team-switcher"
 import { UserNav } from "@/components/user-nav"
 
 export const metadata = {

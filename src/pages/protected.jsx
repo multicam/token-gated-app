@@ -12,8 +12,6 @@ const ProtectedPage = ({user}) => {
             <button onClick={() => push('/user')}>Profile</button>
             <h3>Protected Content</h3>
             <pre>connected to wallet {address}</pre>
-            <NFTCollection address={address}/>
-            <TokenBalances address={address}/>
         </div>
     );
 }

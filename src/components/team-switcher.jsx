@@ -82,7 +82,7 @@ export default function TeamSwitcher({ className }) {
 
     return (
         <Dialog open={showNewTeamDialog} onOpenChange={setShowNewTeamDialog}>
-            <Popover open={open} onOpenChange={setOpen}>
+            <Popover open={open} onOpenChange={setOpen} >
                 <PopoverTrigger asChild>
                     <Button
                         variant="outline"
@@ -102,7 +102,7 @@ export default function TeamSwitcher({ className }) {
                         <CaretSortIcon className="ml-auto h-4 w-4 shrink-0 opacity-50" />
                     </Button>
                 </PopoverTrigger>
-                <PopoverContent className="w-[200px] p-0">
+                <PopoverContent className="w-[200px] p-0 bg-white">
                     <Command>
                         <CommandList>
                             <CommandInput placeholder="Search team..." />
