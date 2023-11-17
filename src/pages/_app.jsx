@@ -2,8 +2,9 @@ import { createConfig, configureChains, WagmiConfig } from "wagmi";
 import { publicProvider } from "wagmi/providers/public";
 import { SessionProvider } from "next-auth/react";
 import { mainnet, polygon, polygonMumbai, klaytn } from "wagmi/chains";
-import "../style/global.css";
-import "../style/skin.css";
+import "@/style/global.css";
+import "@/style/skin.css";
+import '@/style/tables.css'
 
 // blockchain providers
 // mainnet -> eth

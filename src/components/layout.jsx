@@ -1,5 +1,6 @@
-import ThinWalletConnect from './thin-wallet-connect';
+import {ThinWalletMenu, default as ThinWalletConnect} from './thin-wallet-connect';
 import Header from './header';
+import {networkByChainId} from "@/lib/networks";
 
 const hasBars = false;
 export const Layout = ({user, children}) => {
@@ -7,7 +8,7 @@ export const Layout = ({user, children}) => {
 
         <div className="bg-black text-white min-h-screen flex flex-col font-noto">
 
-            <Header />
+            <Header user={user}/>
 
             <div className="flex-1 flex flex-col sm:flex-row">
 
@@ -31,14 +32,13 @@ export const Layout = ({user, children}) => {
 }
 
 export const LayoutProtected = ({user, children}) => {
-    return <>
+    return (
         <div
             className="relative h-screen flex-col items-center justify-center">
             <Header user={user} />
-            <div>
+            <div className='flex-1'>
                 {children}
             </div>
-
         </div>
-    </>
+    )
 }

@@ -1,0 +1,19 @@
+table {
+    /*outline: 1px solid #ccc;*/
+    font-size: 12px;
+
+    font-family: "Noto Sans Display", Sans-Serif;
+}
+
+thead td {
+    padding: .25rem 0.5rem;
+    border: 1px solid #ccc;
+    background-color: #bbb;
+    text-align: left;
+    font-weight: 600;
+}
+
+td {
+    padding: .25rem 0.5rem;
+    border: 1px solid #ccc;
+}

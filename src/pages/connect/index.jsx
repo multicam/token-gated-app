@@ -19,7 +19,7 @@ const Connect = () => {
                         </h1>
                     </div>
                     <ConnectWalletForm/>
-                    <div class="flex-1"></div>
+                    <div className="flex-1"></div>
                     {false && <p className="px-4 text-center text-sm ">
                         By clicking continue, you agree to our{" "}
                         <Link

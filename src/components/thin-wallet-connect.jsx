@@ -6,8 +6,9 @@ import {
     DropdownMenuTrigger
 } from "@/registry/new-york/ui/dropdown-menu";
 import {useRouter} from "next/router";
+import { signOut } from "next-auth/react";
 
-const ThinWalletMenu = ({user}) => {
+export const ThinWalletMenu = ({user}) =>  {
     const router = useRouter()
     return (
         <DropdownMenu>
@@ -41,7 +42,7 @@ const ThinWalletMenu = ({user}) => {
                 <DropdownMenuSeparator />
                 <DropdownMenuItem
                     className='hover:bg-red-900 cursor-pointer'
-                    onClick={() => router.push('/connect')}>
+                    onClick={() => signOut({ redirect: "/connect" })}>
                     Disconnect
                 </DropdownMenuItem>
                 <DropdownMenuLabel className="font-normal">
@@ -57,7 +58,6 @@ const ThinWalletMenu = ({user}) => {
     )
 }
 const ThinWalletConnect = ({user}) => {
-    const router = useRouter()
     return (
         <div className=''>
             <div className='flex justify-between items-center gap-2'>
@@ -65,7 +65,7 @@ const ThinWalletConnect = ({user}) => {
                     <div>
                         <a className='p-2 font-bold text-xs' href='/protected'>Protected Site</a>
                     </div>
-                    <div class="flex items-center p-2">
+                    <div className="flex items-center p-2">
                         <div className='text-xs text-slate-400 leading-5'>connected to {networkByChainId(user.chainId)?.name}</div>
                         <ThinWalletMenu user={user}/>
                     </div>
