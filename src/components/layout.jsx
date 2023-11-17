@@ -35,7 +35,7 @@ export const LayoutProtected = ({user, children}) => {
     return (
         <div
             className="relative h-screen flex-col items-center justify-center">
-            <Header user={user} />
+            <Header user={user} hasMenu />
             <div className='flex-1'>
                 {children}
             </div>

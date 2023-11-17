@@ -13,16 +13,24 @@ export const ThinWalletMenu = ({user}) =>  {
     return (
         <DropdownMenu>
             <DropdownMenuTrigger asChild>
-                <div className="m-2 mt-3 h-3 w-3 rounded-full bg-green-500">
+                <div className="mt-1 ml-2 h-3 w-3 rounded-full bg-green-500">
                     <div className="" />
                 </div>
             </DropdownMenuTrigger>
             <DropdownMenuContent className="w-56 bg-slate-800 text-white border-0 m-2" align="end" forceMount>
                 <DropdownMenuLabel className="font-normal">
                     <div className="flex flex-col space-y-1">
-                        <p className="text-sm font-bold leading-none">Address</p>
+                        <p className="text-xs text-slate-400 leading-none">Address</p>
                         <a className="text-xs leading-none  text-slate-300 hover:text-slate-500 truncate max-w-full block" href="/">
                             {user.address}
+                        </a>
+                    </div>
+                </DropdownMenuLabel>
+                <DropdownMenuLabel className="font-normal">
+                    <div className="flex flex-col space-y-1">
+                        <p className="text-xs text-slate-400 leading-none">Chain</p>
+                        <a className="text-xs leading-none  text-slate-300 hover:text-slate-500 truncate max-w-full block" href="/">
+                            {networkByChainId(user.chainId)?.name}
                         </a>
                     </div>
                 </DropdownMenuLabel>
@@ -47,7 +55,7 @@ export const ThinWalletMenu = ({user}) =>  {
                 </DropdownMenuItem>
                 <DropdownMenuLabel className="font-normal">
                     <div className="flex flex-col space-y-1">
-                        <p className="text-sm ">Contact LTV</p>
+                        <p className="text-xs text-slate-400">Contact LTV</p>
                         <a className="text-xs leading-none  text-slate-300 hover:text-slate-500" href="mailto:info@lifetechverse.com">
                             info@lifetechverse.com
                         </a>

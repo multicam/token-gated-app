@@ -31,9 +31,8 @@ function SampleWallet() {
     const {data: nativeBalance} = useEvmNativeBalance({address});
     return (
         <div className='border border-red-300 max-w-full'>
-            <p>Sample Wallet</p>
-            <h3>Address: {address}</h3>
-            <h3>Native Balance: {nativeBalance?.balance.ether} ETH</h3>
+            <strong className='block leading-6 font-bold text-xs px-1'>Address: {address}</strong>
+            <strong className='block leading-6 font-bold text-xs px-1'>Native Balance: {nativeBalance?.balance.ether} ETH</strong>
             <NFTCollections address={address}/>
             <TokenBalances address={address}/>
         </div>
@@ -46,7 +45,7 @@ const ProtectedPage = ({user}) => {
     const address = user?.address
     return (
         <LayoutProtected user={user}>
-            <section class="p-8">
+            <section className="p-4">
                 <pre className='font-mono text-[12px]'>
                     <strong>!! protected only !! &nbsp;
                         <Link className='text-orange-600'
@@ -54,7 +53,7 @@ const ProtectedPage = ({user}) => {
                     </strong>
                 </pre>
             </section>
-            <section>
+            <section className='p-4'>
                 <SampleWallet/>
             </section>
         </LayoutProtected>

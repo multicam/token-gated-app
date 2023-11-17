@@ -23,6 +23,13 @@ function UserPage({user}) {
     const address = user?.address;
     return address ? (
         <LayoutProtected user={user}>
+            <section className='p-4'>
+                    <pre className='font-mono text-[12px]'>
+                        <strong>!! protected only !! &nbsp;
+                            <Link className='text-orange-600' href='/protected'>access protected content</Link>
+                        </strong>
+                    </pre>
+            </section>
             <div className="h-full overflow-y-auto font-noto">
                 <section className='p-4'>
                     <h1 className='text-4xl font-extrabold'>Welcome To The Membership Only Pages</h1>
@@ -33,13 +40,6 @@ function UserPage({user}) {
                     <NFTCollections address={address}/>
                     <h5 className='font-black text-sm mt-4 text-slate-700'>Token Balances</h5>
                     <TokenBalances address={address}/>
-                </section>
-                <section className='p-4'>
-                    <pre className='font-mono text-[12px]'>
-                        <strong>!! protected only !! &nbsp;
-                            <Link className='text-orange-600' href='/protected'>access protected content</Link>
-                        </strong>
-                    </pre>
                 </section>
             </div>
         </LayoutProtected>
