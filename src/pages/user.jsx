@@ -2,7 +2,6 @@ import { getSession, signOut } from "next-auth/react";
 import { useRouter } from "next/router";
 import {NFTCollection, TokenBalances} from "@/components";
 
-// gets a prop from getServerSideProps
 function User({ user }) {
     const address = user?.address;
     const { push } = useRouter();
@@ -14,7 +13,7 @@ function User({ user }) {
             <NFTCollection address={address}/>
             <h5>Token Balances</h5>
             <TokenBalances address={address}/>
-            <button onClick={() => signOut({ redirect: "/signin" })}>Sign out</button>
+            <button onClick={() => signOut({ redirect: "/connect" })}>Sign out</button>
             <button onClick={() => push('/protected')}>Members Only</button>
         </div>
     );
@@ -25,12 +24,11 @@ export async function getServerSideProps(context) {
     if (!session) {
         return {
             redirect: {
-                destination: "/signin",
+                destination: "/connect",
                 permanent: false,
             },
         };
     }
-
     return {
         props: { user: session.user },
     };

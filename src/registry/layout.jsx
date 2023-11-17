@@ -14,7 +14,7 @@ function Layout({session, children}) {
     return (
         <div className='p-2'>
             <div className='font-mono text-sm'>
-                {!!session ? stringify(session, null, 2) : <><span className='text-orange-600'>no session</span> <a href='/signin'>sign in</a></>}
+                {!!session ? stringify(session, null, 2) : <><span className='text-orange-600'>no session</span> <a href='/connect'>connect wallet</a></>}
             </div>
             <div>{children}</div>
 

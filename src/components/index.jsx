@@ -49,7 +49,7 @@ export function TokenBalances({address}) {
             const {tokenAddress, chain, name, symbol, decimals, balance} = i
             return <tr key={n} className='leading-5'>
                 <td className='text-right pr-2 font-bold'>{parseFloat(i.value).toFixed(2)}</td>
-                <td>{i.token.symbol} &mdash; {i.token.name}</td>
+                <td>{i.token.symbol}|{i.token.name}</td>
                 <td>
                     <div className='w-8 h-8'><img className='cover' src={i.token.logo}/></div>
                 </td>

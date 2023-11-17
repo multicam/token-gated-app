@@ -9,7 +9,7 @@ function SamplingPage() {
         <div className='p-2'>
             <Link href='/'>Home</Link>
             <h2>Samples</h2>
-            <div><Link href='/_sampling/signin'>Signin</Link></div>
+            <div><Link href='/_sampling/create'>Create</Link></div>
             <div><Link href='/_sampling/dashboard'>Dashboard</Link></div>
         </div>
     );
