@@ -29,3 +29,16 @@ export const Layout = ({user, children}) => {
 
     )
 }
+
+export const LayoutProtected = ({user, children}) => {
+    return <>
+        <div
+            className="relative h-screen flex-col items-center justify-center">
+            <Header user={user} />
+            <div>
+                {children}
+            </div>
+
+        </div>
+    </>
+}

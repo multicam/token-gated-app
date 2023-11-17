@@ -181,13 +181,13 @@ export default function TeamSwitcher({ className }) {
                                 <SelectContent>
                                     <SelectItem value="free">
                                         <span className="font-medium">Free</span> -{" "}
-                                        <span className="text-muted-foreground">
+                                        <span className="">
                       Trial for two weeks
                     </span>
                                     </SelectItem>
                                     <SelectItem value="pro">
                                         <span className="font-medium">Pro</span> -{" "}
-                                        <span className="text-muted-foreground">
+                                        <span className="">
                       $9/month per user
                     </span>
                                     </SelectItem>

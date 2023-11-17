@@ -20,6 +20,8 @@ const BigLogo = () =>
         <img className='h-full' src='/logo.svg' alt={`${config.companyName} Logo`}/>
     </div>
 
+const env = process.env.NODE_ENV
+
 function HomePage({user}) {
     return (
         <Layout user={user}>
@@ -28,9 +30,10 @@ function HomePage({user}) {
                     <BigLogo/>
                 </div>
                 <div className='w-1/5 overflow-y-auto bg-slate-950'>
-                    <h5 className='font-bold text-xs text-slate-300 px-2 py-1 rounded bg-slate-800 inline-block'>user</h5>
-                    <pre className='p-2 whitespace-pre-wrap break-all text-xs'>{!!user ? stringify(user, null, 2) : <><span
-                        className='text-orange-600 px-2'>no user</span> <a href='/connect'>connect wallet</a></>}</pre>
+                     <h5 className='font-bold text-xs text-slate-300 px-2 py-1 rounded bg-slate-800 inline-block'>user ({env})</h5>
+
+                    {env === 'development' && <pre className='p-2 whitespace-pre-wrap break-all text-xs'>{!!user ? stringify(user, null, 2) : <><span
+                        className='text-orange-600 px-2'>no user</span></>}</pre>}
                 </div>
             </div>
         </Layout>

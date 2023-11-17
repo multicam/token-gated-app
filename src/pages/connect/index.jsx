@@ -9,9 +9,6 @@ const Connect = () => {
             <div className="relative hidden h-full flex-col bg-muted p-10 text-white dark:border-r lg:flex">
                 <div className="absolute inset-0 bg-slate-950"/>
                 <Header className="relative z-20 flex items-center text-lg font-medium"/>
-                <div className="relative z-20 mt-auto">
-
-                </div>
             </div>
             <div className="lg:p-8 h-full">
                 <div className="mx-auto  h-full flex w-full flex-col justify-center space-y-6 sm:w-[350px]">
@@ -23,7 +20,7 @@ const Connect = () => {
                     </div>
                     <ConnectWalletForm/>
                     <div class="flex-1"></div>
-                    {false && <p className="px-4 text-center text-sm text-muted-foreground">
+                    {false && <p className="px-4 text-center text-sm ">
                         By clicking continue, you agree to our{" "}
                         <Link
                             href="/terms"
@@ -40,7 +37,7 @@ const Connect = () => {
                         </Link>
                         .
                     </p>}
-                    <p className="px-8 text-center text-xs text-muted-foreground">
+                    <p className="px-8 text-center text-xs ">
                         This is a gated community for members only. You must own a LifeTechVerse NFT to join.
                     </p>
                 </div>

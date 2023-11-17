@@ -3,6 +3,7 @@ import {getSession} from "next-auth/react";
 
 import {NFTCollection, TokenBalances} from "@/components";
 import {useEvmNativeBalance} from '@moralisweb3/next';
+import {LayoutProtected} from "@/components/layout";
 
 const {log} = console, {keys} = Object
 
@@ -42,13 +43,13 @@ const ProtectedPage = ({user}) => {
     const {push} = useRouter();
     const address = user?.address
     return (
-        <div>
+        <LayoutProtected>
             <button onClick={() => push('/user')}>Profile</button>
             <h3>Protected Content</h3>
             <pre>connected to wallet {address}</pre>
             <hr/>
             <SampleWallet />
-        </div>
+        </LayoutProtected>
     );
 }
 
